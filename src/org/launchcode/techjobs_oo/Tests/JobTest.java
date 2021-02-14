@@ -1,12 +1,12 @@
 package org.launchcode.techjobs_oo.Tests;
-
+import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
 import static junit.framework.TestCase.*;
-
-
+import static junit.framework.AssertionFailedError.*;
 public class JobTest {
     Job testJob1;
     Job testJob2;
@@ -46,6 +46,24 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertEquals(testJob4.getId(), testJob5.getId());
+    }
+
+    @Test
+    public void testToString(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        Boolean expectedA = job.toString().startsWith("\n");
+        Boolean expectedB = job.toString().endsWith("\n");
+        Boolean compareThis = expectedA == expectedB;
+
+
+
+
+
+
+
+
+
     }
 
 
